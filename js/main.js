@@ -7,6 +7,12 @@ const el_style_check = 'fa-check-circle',
     el_style_uncheck = 'fa-circle-thin',
     el_style_lineThrough = 'lineThrough';
 
+//adding date
+const today = new Date(),
+    dateOptions = {weekday: 'long', month: 'short', day: 'numeric'};
+
+dateEl.innerHTML = today.toLocaleDateString('pl', dateOptions);
+
 let toDoList__arr = [];
 
 let id = 0;
@@ -56,6 +62,11 @@ function addToDo(toDo, id, done, trash) {
     const position = 'beforeend';
     listEl.insertAdjacentHTML(position, list__html)
 }
+
+clear__icon.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload(); //reload page
+});
 
 let data = localStorage.getItem('TODO');
 if (data) {
