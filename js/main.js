@@ -12,3 +12,9 @@ function addToDo(toDo) {
     const position = 'beforeend';
     listEl.insertAdjacentHTML(position, list__html)
 }
+
+document.addEventListener('keyup', (e) => {
+    if(e.key === 'Enter') {
+        console.log('hhhhs')
+    }
+})
