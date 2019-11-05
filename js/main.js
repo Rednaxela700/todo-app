@@ -58,15 +58,18 @@ function addToDo(toDo, id, done, trash) {
 }
 
 
-listEl.addEventListener('click', ev => {
-    let targetEl = ev.target;
+listEl.addEventListener('click', (e) => {
+    let targetEl = e.target;
     const targetEl_job = targetEl.attributes.job.value; //may be delete or complete
     if (targetEl_job === 'done') {
         completeToDo(targetEl);
     } else if (targetEl_job === 'delete') {
         removeToDo(targetEl)
     }
-})
+
+    //update local storage
+    localStorage.setItem("TODO", JSON.stringify(toDoList__arr));
+});
 
 document.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
