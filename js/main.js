@@ -25,7 +25,11 @@ toDoList__arr[1] = {
     done: true,
     trash: false
 };
-
+function removeToDo(element) {
+    const toDoContainer = element.parentNode.parentNode;
+    const thatToDo = element.parentNode;
+    toDoContainer.removeChild(thatToDo);
+}
 function completeToDo(element) {
     //change html
     element.classList.toggle(el_style_check);
