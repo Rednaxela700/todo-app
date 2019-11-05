@@ -60,7 +60,7 @@ function addToDo(toDo, id, done, trash) {
 
 listEl.addEventListener('click', ev => {
     let targetEl = ev.target;
-    const targetEl_job = ev.target.attributes.job.value; //may be delete or complete
+    const targetEl_job = targetEl.attributes.job.value; //may be delete or complete
     if (targetEl_job === 'done') {
         completeToDo(targetEl);
     } else if (targetEl_job === 'delete') {
