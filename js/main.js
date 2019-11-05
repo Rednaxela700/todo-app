@@ -35,9 +35,18 @@ document.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
         const  toDo = inputEl.value;
         if(toDo) {  //add a toDo if not empty
-            addToDo(toDo);
+            addToDo(toDo, id, false, false);
+            toDoList__arr.push(
+                {
+                    name: toDo,
+                    id: id,
+                    done: false,
+                    trash: false
+                }
+            )
         }
 
         inputEl.value = ''; //reset input value
+        id++;
     }
 });
