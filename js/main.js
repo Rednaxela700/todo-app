@@ -15,6 +15,11 @@ function addToDo(toDo) {
 
 document.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
-        console.log('hhhhs')
+        const  toDo = inputEl.value;
+        if(toDo) {  //add a toDo if not empty
+            addToDo(toDo);
+        }
+
+        inputEl.value = ''; //reset input value
     }
-})
+});
