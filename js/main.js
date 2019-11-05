@@ -26,9 +26,13 @@ toDoList__arr[1] = {
     trash: false
 };
 function removeToDo(element) {
+
+    //delete from html
     const toDoContainer = element.parentNode.parentNode;
     const thatToDo = element.parentNode;
     toDoContainer.removeChild(thatToDo);
+    //set to trash in JS
+    toDoList__arr[element.id].trash = true;
 }
 function completeToDo(element) {
     //change html
