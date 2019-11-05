@@ -40,6 +40,10 @@ body {
   height: 50px;
   border: 1px solid #BDBDBD;
 }
+.list__paragraph {
+  width: 100%;
+  text-align: center;
+}
 
 .icon__container {
   text-align: center;
@@ -49,6 +53,10 @@ body {
 }
 .icon__item {
   padding: 0.5rem 1rem;
+}
+
+.lineThrough {
+  text-decoration: line-through;
 }
 
 /*# sourceMappingURL=main.css.map */

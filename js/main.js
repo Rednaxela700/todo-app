@@ -3,8 +3,8 @@ const clear__icon = document.querySelector('.icon__container--clear'),
     listEl = document.getElementById('list'),
     inputEl = document.getElementById('note__input');
 
-const el_style_check = 'fa-check-circle',
-    el_style_uncheck = 'fa-circle-thin',
+const el_style_check = 'far',
+    el_style_uncheck = 'fas',
     el_style_lineThrough = 'lineThrough';
 
 //adding date
@@ -16,21 +16,21 @@ dateEl.innerHTML = today.toLocaleDateString('pl', dateOptions);
 let toDoList__arr = [];
 
 let id = 0;
-
-toDoList__arr[0] =
-
-{
-    name: 'drink coffee',
-    id: 0,
-    done: false,
-    trash: false
-};
-toDoList__arr[1] = {
-    name: 'Bike',
-    id: 1,
-    done: true,
-    trash: false
-};
+//
+// toDoList__arr[0] =
+//
+// {
+//     name: 'drink coffee',
+//     id: 0,
+//     done: false,
+//     trash: false
+// };
+// toDoList__arr[1] = {
+//     name: 'Bike',
+//     id: 1,
+//     done: true,
+//     trash: false
+// };
 function removeToDo(element) {
 
     //delete from html
@@ -45,8 +45,9 @@ function completeToDo(element) {
     element.classList.toggle(el_style_check);
     element.classList.toggle(el_style_uncheck);
     element.parentNode.querySelector('.list__paragraph').classList.toggle(el_style_lineThrough);
+    console.log('now finish it in js arr')
     //update in js array
-    toDoList__arr[element.id].done ? false :true;
+    // toDoList__arr[element.id].done ? false :true;
 }
 
 function addToDo(toDo, id, done, trash) {
@@ -74,7 +75,7 @@ if (data) {
     loadToDo(toDoList__arr);
     id = toDoList__arr.length
 } else {
-    toDoList__arr = []
+    toDoList__arr = [];
     id = 0;
 }
 
@@ -83,14 +84,18 @@ function loadToDo(arr) {
         addToDo(item.name, item.id, item.done, item.trash)
     })
 }
-clear__icon.addEventListener('click')
 listEl.addEventListener('click', (e) => {
     let targetEl = e.target;
-    const targetEl_job = targetEl.attributes.job.value; //may be delete or complete
+    // console.log(targetEl.parentNode.parentNode.)
+    let targetEl_job = targetEl.getAttribute('job');
+    // let targetEl_job = targetEl.attributes.job.value; //may be delete or complete
     if (targetEl_job === 'done') {
         completeToDo(targetEl);
     } else if (targetEl_job === 'delete') {
         removeToDo(targetEl)
+    } else {
+        console.log('dupa1');
+        console.log(targetEl_job)
     }
 
     //update local storage
@@ -116,3 +121,5 @@ document.addEventListener('keyup', (e) => {
         id++;
     }
 });
+
+// addToDo('start the game', 1, false, false)
