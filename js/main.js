@@ -26,6 +26,15 @@ toDoList__arr[1] = {
     trash: false
 };
 
+function completeToDo(element) {
+    //change html
+    element.classList.toggle(el_style_check);
+    element.classList.toggle(el_style_uncheck);
+    element.parentNode.querySelector('.list__paragraph').classList.toggle(el_style_lineThrough);
+    //update in js array
+    toDoList__arr[element.id].done ? false :true;
+}
+
 function addToDo(toDo, id, done, trash) {
     if (trash){return} //if item is in the trash further code in this func won't work
 
