@@ -57,7 +57,22 @@ function addToDo(toDo, id, done, trash) {
     listEl.insertAdjacentHTML(position, list__html)
 }
 
+let data = localStorage.getItem('TODO');
+if (data) {
+    toDoList__arr = JSON.parse(data);
+    loadToDo(toDoList__arr);
+    id = toDoList__arr.length
+} else {
+    toDoList__arr = []
+    id = 0;
+}
 
+function loadToDo(arr) {
+    arr.forEach((item) => {
+        addToDo(item.name, item.id, item.done, item.trash)
+    })
+}
+clear__icon.addEventListener('click')
 listEl.addEventListener('click', (e) => {
     let targetEl = e.target;
     const targetEl_job = targetEl.attributes.job.value; //may be delete or complete
