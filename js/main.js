@@ -57,6 +57,17 @@ function addToDo(toDo, id, done, trash) {
     listEl.insertAdjacentHTML(position, list__html)
 }
 
+
+listEl.addEventListener('click', ev => {
+    let targetEl = ev.target;
+    const targetEl_job = ev.target.attributes.job.value; //may be delete or complete
+    if (targetEl_job === 'done') {
+        completeToDo(targetEl);
+    } else if (targetEl_job === 'delete') {
+        removeToDo(targetEl)
+    }
+})
+
 document.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
         const  toDo = inputEl.value;
