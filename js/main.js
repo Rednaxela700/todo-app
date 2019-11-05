@@ -3,6 +3,24 @@ const clear__icon = document.querySelector('.icon__container--clear'),
     listEl = document.getElementById('list'),
     inputEl = document.getElementById('note__input');
 
+let toDoList__arr = [];
+let id = 0;
+
+toDoList__arr[0] =
+
+{
+    name: 'drink coffee',
+    id: 0,
+    done: false,
+    trash: false
+};
+toDoList__arr[1] = {
+    name: 'Bike',
+    id: 1,
+    done: true,
+    trash: false
+};
+
 function addToDo(toDo) {
     const list__html = `<li class="list__item">
                             <i class="fa fa-circle icon__item--complete" job="done"></i>
