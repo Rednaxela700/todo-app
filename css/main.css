@@ -19,4 +19,36 @@ body {
   background-color: rebeccapurple;
 }
 
+.header {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.date__container {
+  display: flex;
+}
+
+.list__container {
+  list-style: none;
+}
+.list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border: 1px solid #BDBDBD;
+}
+
+.icon__container {
+  text-align: center;
+}
+.icon__container--clear {
+  text-align: right;
+}
+.icon__item {
+  padding: 0.5rem 1rem;
+}
+
 /*# sourceMappingURL=main.css.map */

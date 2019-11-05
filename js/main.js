@@ -55,9 +55,9 @@ function addToDo(toDo, id, done, trash) {
     const item__done = done ? el_style_check : el_style_uncheck;
     const item__line = done ? el_style_lineThrough : '';
     const list__html = `<li class="list__item">
-                            <i class="fa fa-circle icon__item--complete" job="done" id="${id}"></i>
+                            <i class="fas fa-check-circle icon__item icon__item--complete" job="done" id="${id}"></i>
                             <p class="list__paragraph">${toDo}</p>
-                            <i class="fa fa-trash-o icon__item--delete" job="delete" id="${id}"></i>
+                            <i class="fas fa-trash icon__item icon__item--delete" job="delete" id="${id}"></i>
                         </li>`;
     const position = 'beforeend';
     listEl.insertAdjacentHTML(position, list__html)
